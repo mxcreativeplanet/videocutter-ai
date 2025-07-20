@@ -1,0 +1,53 @@
+{
+  "name": "videocutter-ai",
+  "version": "1.0.0",
+  "description": "Aplicación de escritorio para cortar videos de forma fácil y rápida",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "set NODE_ENV=development && electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "video",
+    "cutter",
+    "ffmpeg",
+    "electron",
+    "desktop-app"
+  ],
+  "author": "VideoCutter AI Team",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^22.14.13",
+    "eslint": "^8.0.0"
+  },
+  "build": {
+    "appId": "com.videocutter.ai",
+    "productName": "VideoCutter AI",
+    "directories": {
+      "output": "dist-final"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": "dir"
+    },
+    "mac": {
+      "target": "dmg"
+    }
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "@ffprobe-installer/ffprobe": "^2.1.2",
+    "fluent-ffmpeg": "^2.1.3"
+  }
+}
